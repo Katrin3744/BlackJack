@@ -17,6 +17,8 @@ class PlayLogic
     @dialer.money -= 10
     @player.cards = []
     @dialer.cards = []
+    puts @player.cards
+    puts @dialer.cards
     Person.update_cards
     @dialer.get_first_cards
     @player.get_first_cards

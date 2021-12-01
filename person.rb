@@ -33,7 +33,7 @@ class Person
 
   def get_card
     if @cards.length < 3
-      i = rand(0..51)
+      i = rand(@@all_cards.length)
       @cards.push(@@all_cards[i])
       @@all_cards.delete_at(i)
       num_points
@@ -45,8 +45,6 @@ class Person
   end
 
   def num_points
-    puts @@all_cards.length
-    puts @cards
     @points = 0
     @cards.each do |card|
       if card[0].start_with?("Т")

@@ -32,7 +32,7 @@ class Person
 
   def get_card
     if @cards.length < 3
-      i = rand(@@all_cards.length)
+      i = rand(@@all_cards.length-1)
       @cards.push(@@all_cards[i])
       @@all_cards.delete_at(i)
       num_points

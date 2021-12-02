@@ -1,6 +1,6 @@
 class Dialer < Person
 
-  def initialize(name)
+  def initialize
     super
   end
 

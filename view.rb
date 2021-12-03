@@ -13,11 +13,11 @@ class View
 
   def view_with_block(player,dialer,&block)
     puts "Your cards                Dealer's cards"
-    player.show_cards
+    player.cards.each{|card| print "#{card.suit} #{card.value} "}
     print "              "
     dialer.cards.each { |card| block.call(card) }
     puts
-    puts "Your points #{player.points} "
+    puts "Your points #{player.get_points} "
   end
 
 end

@@ -14,7 +14,7 @@ class Hand
           card.value = 11
         else
           @points += 1
-          card.value == 1
+          card.value = 1
         end
       else
         @points += card.value

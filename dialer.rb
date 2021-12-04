@@ -1,0 +1,3 @@
+class Dialer < Person
+
+end

@@ -1,5 +1,5 @@
 class Person
-  attr_reader :name,  :play_cards
+  attr_reader :play_cards
   attr_accessor :money, :person_hand
 
   def initialize

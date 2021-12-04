@@ -1,4 +1,5 @@
 class Player < Person
+  attr_reader :name
   NAME_FORMAT = /^[a-z0-9]{3,15}$/i
 
   def initialize(name)

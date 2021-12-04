@@ -1,13 +1,13 @@
 class Hand
-  attr_reader :points
+  attr_accessor :cards
 
   def initialize
-    @points = 0
+    @cards=[]
   end
 
-  def num_points(cards)
+  def num_points
     @points = 0
-    cards.each do |card|
+    @cards.each do |card|
       if card.suit.start_with?("Т")
         if @points + 11 <= 21
           @points += 11
@@ -20,6 +20,7 @@ class Hand
         @points += card.value
       end
     end
+    @points
   end
 
 end

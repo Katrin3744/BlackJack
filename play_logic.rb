@@ -1,6 +1,6 @@
 class PlayLogic
   def start
-    Person.gen_cards
+    Deck.generate_cards
     @view = View.new
     @dialer = Dialer.new
     attempt = 0
@@ -28,9 +28,9 @@ class PlayLogic
     @bank = 20
     @player.money -= 10
     @dialer.money -= 10
-    @player.cards = []
-    @dialer.cards = []
-    Person.gen_cards
+    @player.person_hand.cards = []
+    @dialer.person_hand.cards = []
+    Deck.generate_cards
     @dialer.get_first_cards
     @player.get_first_cards
     @view.view_with_block(@player, @dialer) { print "*" }
@@ -49,7 +49,7 @@ class PlayLogic
         num = 2
         @view.view_for_string("Dialer's move")
       end
-      if @dialer.cards.length == 3 && @player.cards.length == 3
+      if @dialer.person_hand.cards.length == 3 && @player.person_hand.cards.length == 3
         num = 3
         @view.view_for_string("Both have 3 cards")
       end
